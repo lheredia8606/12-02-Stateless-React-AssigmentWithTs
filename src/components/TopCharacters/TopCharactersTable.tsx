@@ -5,6 +5,7 @@ import "./character-ratings.css";
 
 export function TopCharactersTable() {
   const mostVoted = moreVoted(charactersData);
+
   return (
     <>
       <section id="character-ratings">
@@ -17,13 +18,9 @@ export function TopCharactersTable() {
               <th>Votes</th>
             </tr>
           </thead>
-          <tbody key={9}>
+          <tbody>
             {mostVoted.map((item, index) => {
-              return (
-                <>
-                  <CharacterRow key={item.name} item={item} index={index} />
-                </>
-              );
+              return <CharacterRow key={item.name} item={item} index={index} />;
             })}
           </tbody>
         </table>
